@@ -1,0 +1,237 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Win部署Alist步骤 | RedfoxBlog</title>
+
+<link rel="shortcut icon" href="https://SAA155.github.io/favicon.ico?v=1722779482368">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://SAA155.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            RedfoxBlog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1722779482368" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Win部署Alist步骤
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-08-04 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="内容提要">内容提要</h2>
+<p>Alist 以及 RaiDrive 的安装</p>
+<p>Alist的设置</p>
+<p>RaiDrive 的设置</p>
+<p>设置Alist的自启动</p>
+<h2 id="本篇文章所使用的工具">本篇文章所使用的工具</h2>
+<p><a href="/C:/Users/YOULA/AppData/Local/Programs/Joplin/resources/app.asar/blog.redfox.moe" title="blog.redfox.moe">本地下载1</a></p>
+<p>Alist 项目地址：https://github.com/alist-org/alist</p>
+<p>RaiDrive官网：https://www.raidrive.com/download/</p>
+<h2 id="aiist-以及-raidrive-的安装">AIist 以及 RaiDrive 的安装</h2>
+<p>首先将其解压出来，RaiDrive随意安装即可，会弹出安装驱动设备，根据提示安装即可。Alist要解压到一个目录里，这个目录将会成为Alist的运行目录，目录不建议有中文。<br>
+<img src=":/0a483fd66a544b07bd3002fdf346236f" alt="d07cbb071a1614768b0c9f7f48bb1355.png" loading="lazy"><br>
+在Alist目录的路径内输入cmd</p>
+<p>在cmd内运行以下命令</p>
+<pre><code># 运行程序
+.\alist.exe server
+# 获得管理员信息
+
+.\alist.exe admin
+</code></pre>
+<p>运行后会得出以下信息：</p>
+<pre><code>D:\APPdata\Alist&gt;.\alist.exe server
+INFO[2024-02-07 11:32:14] reading config file: data\config.json
+INFO[2024-02-07 11:32:14] load config from env with prefix: ALIST_
+INFO[2024-02-07 11:32:14] init logrus...
+INFO[2024-02-07 11:32:14] start server @ 0.0.0.0:5244
+FATA[2024-02-07 11:32:14] failed to start: listen tcp 0.0.0.0:5244: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+</code></pre>
+<pre><code>D:\APPdata\Alist&gt;.\alist.exe admin
+INFO[2024-02-07 11:32:39] reading config file: data\config.json
+INFO[2024-02-07 11:32:39] load config from env with prefix: ALIST_
+INFO[2024-02-07 11:32:39] init logrus...
+INFO[2024-02-07 11:32:39] admin user's info:
+username: admin
+
+password: os6EfEqe
+</code></pre>
+<p>默认管理员用户名都是admin，端口一般都为5244，我们只需要注意password就好了。</p>
+<p>在浏览器输入127.0.0.1:5244就可以进行设置了，如需使用其他设备访问需要本机ip加上端口号，类似192.168.1.1:5244。</p>
+<p>如果不会查看本机ip请在cmd内输入ipconfig命令。</p>
+<p>会显示以下内容：</p>
+<pre><code>无线局域网适配器 WLAN:
+   连接特定的 DNS 后缀 . . . . . . . :
+   IPv6 地址 . . . . . . . . . . . . : fd00:6868:6868::65c
+   IPv6 地址 . . . . . . . . . . . . : fd00:6868:6868:0:1141:180f:6e92:495b
+   临时 IPv6 地址. . . . . . . . . . : fd00:6868:6868:0:819d:835e:22e0:fbfe
+   本地链接 IPv6 地址. . . . . . . . : fe80::1141:180f:6e92:495b%12
+   IPv4 地址 . . . . . . . . . . . . : 192.168.31.226
+   子网掩码  . . . . . . . . . . . . : 255.255.255.0
+
+   默认网关. . . . . . . . . . . . . : fe80::8ede:f9ff:fe77:9064%12
+</code></pre>
+<p>找到</p>
+<p><code>IPv4 地址 . . . . . . . . . . . . : 192.168.31.226</code></p>
+<p>以我为例在浏览器输入192.168.31.226:5244即可。</p>
+<h2 id="alist的设置">Alist的设置</h2>
+<p>进入界面后查看底部内容</p>
+<p><code>由 AList 驱动 | 管理</code></p>
+<p>点击管理后进入AList管理页面随后依次点击存储-添加。<br>
+<img src=":/53169523cf924bbb8041e7c5a2cc4da5" alt="54c46e4a4435fd54d28e232e7ce062e6.png" loading="lazy"><br>
+以阿里云盘为例。</p>
+<p>选择 阿里云盘Open</p>
+<p>挂载路径就是显示的名字，在斜杠后添加任意文字即可，在RaiDrive的设置里要用到。<br>
+<img src=":/f27a20bf7082495ebac29d5774bcfdc9" alt="6deaf379e6cd15f917a07149204028db.png" loading="lazy"><br>
+完成后在以下链接申请key后填入 刷新令牌* 后点击保存即可完成。</p>
+<p>https://alist.nn.ci/tool/aliyundrive/request</p>
+<p>详细步骤：<br>
+<img src=":/fdfea4abdbf14b268bbf5d71e62d77a2" alt="66cc1def8ead964777378c9f856618c2.png" loading="lazy"><br>
+<img src=":/8d57327f3c9d4caf8ba2d6acb9f9650f" alt="044f92bab620b367b3c9c4ffb2d33d83.png" loading="lazy"><br>
+点击I have scan 后进入新页面，复制refresh_token填入 刷新令牌*点击保存就完成了以阿里云盘为例的Alist的所有配置，在Alist内已经可以查看并管理阿里云盘内的所有文件了。</p>
+<h2 id="raidrive-的设置">RaiDrive 的设置</h2>
+<p><img src=":/24882edeec8348d99f97dc8daaba6322" alt="b2238b5290fb1784e53008c59ba027cf.png" loading="lazy"><br>
+最终效果：<br>
+<img src=":/3420255989a7453788d40b15da578498" alt="da3e2e6d1e745e76798499951a466605.png" loading="lazy"><br>
+至此RaiDrive 的设置完成，挂载盘已可用。</p>
+<h2 id="设置alist的自启动">设置Alist的自启动</h2>
+<p>找到此前此前Alist的安装目录</p>
+<p>将以下文件拖入Alist的安装目录<br>
+<img src=":/f9a11b73173e4c71909e8f4a4d30175e" alt="e7fd32e7ef3ac4dd1f1682185c021efc.png" loading="lazy"><br>
+为启动.vbs创建一个快捷方式</p>
+<p>具体步骤：<br>
+<img src=":/f701f52abadf473aa03b6b3f470be350" alt="6f6d8999f50366f09453a91790aaa956.png" loading="lazy"><br>
+<img src=":/9642e17e503d42e0a802f78ab2aaf48b" alt="f671c258da44f1d563dc836fe429a30d.png" loading="lazy"><br>
+完成后得到快捷方式Alist：<br>
+<img src=":/a9505f900f024ae0a04c282dcfa7079e" alt="c2cf5fee417faa9c9d45b6d92f491af1.png" loading="lazy"><br>
+快捷键WIN+R ，输入shell:startup<br>
+<img src=":/3687c960178242588ac55ffb86a7602c" alt="86a2f4dcd9b0c1b1c7dc87655fe963ab.png" loading="lazy"><br>
+把刚才创建的Alist快捷方式放入此处。<br>
+<img src=":/83222bd6f9004a7c85edc67be152bdd9" alt="6febac4c6ba92786272ab0247d416fe1.png" loading="lazy"><br>
+至此Alist的开机自启设置完成，本篇教程结束。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first"></div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://SAA155.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
